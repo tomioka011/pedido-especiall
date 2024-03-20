@@ -1,0 +1,42 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Boneco de Neve</title>
+</head>
+<body>
+    <div class="sky">
+        <div class="moon"></div>
+    </div>
+    <div class="snowman">
+        <div class="head">
+            <div class="nose"></div>
+            <div class="eyes">
+                <div class="eye-left"></div>
+                <div class="eye-right"></div>
+            </div>
+        </div>
+        <div class="body"></div>
+        <div class="arms">
+            <div class="left-arm"></div>
+            <div class="right-arm"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Adicionando animação para fazer o boneco de neve cair
+        const snowman = document.querySelector('.snowman');
+        let yPos = 0; // Posição vertical inicial
+
+        function animateSnowman() {
+            yPos += 2; // Ajuste a velocidade da queda conforme necessário
+            snowman.style.transform = `translateY(${yPos}px)`;
+            requestAnimationFrame(animateSnowman);
+        }
+
+        // Iniciar a animação quando a página for carregada
+        window.onload = animateSnowman;
+    </script>
+</body>
